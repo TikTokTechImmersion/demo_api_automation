@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "e3958d9b-74b6-40ca-851d-6b0a7fbf0f4f",
+		"name": "Weather API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20881793",
+		"_collection_link": "https://risk-crocodile.postman.co/workspace/TikTok-Tech-Immersion-2023~792cdc96-c8f0-44a9-9956-184fab7436ff/collection/20881793-e3958d9b-74b6-40ca-851d-6b0a7fbf0f4f?action=share&creator=20881793&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Weather API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('should return status code 200', function() {",
+							"    pm.response.to.be.success",
+							"})",
+							"",
+							"pm.test('should return items', function() {",
+							"    const responseData = pm.response.json();",
+							"    pm.expect(responseData).to.have.property('items')",
+							"    pm.expect(responseData.items.length).to.be.greaterThan(0)",
+							"})",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast",
+					"protocol": "https",
+					"host": [
+						"api",
+						"data",
+						"gov",
+						"sg"
+					],
+					"path": [
+						"v1",
+						"environment",
+						"24-hour-weather-forecast"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
